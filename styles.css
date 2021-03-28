@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: lightgrey;
+}
+
+#click-audio-wrapper, #winner-audio-wrapper{
+    display: none;
+}
+
+#players{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#players h3{
+    font-size: 20px;
+    margin: 5px;
+}
+
+#grid{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    height: 450px;
+    width: 450px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border-radius: 15px;
+    background-color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+
+.cell:nth-child(1), .cell:nth-child(4), .cell:nth-child(7){
+    border-right: 3px solid lightgrey;
+}
+
+.cell:nth-child(2), .cell:nth-child(5), .cell:nth-child(8){
+    border-right: 3px solid lightgrey;
+}
+
+.cell:nth-child(4), .cell:nth-child(5), .cell:nth-child(6){
+    border-top: 3px solid lightgrey;
+    border-bottom: 3px solid lightgrey;
+}
+
+.cell{
+    /* width: 150px;
+    height: 150px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    font-weight: 700;
+    color: lightgrey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: default;
+}
+
+.cell:nth-child(1){
+    border-top-left-radius: 15px;
+}
+
+.cell:nth-child(7){
+    border-bottom-left-radius: 15px;
+}
+
+.cell:nth-child(3){
+    border-top-right-radius: 15px;
+}
+
+.cell:nth-child(9){
+    border-bottom-right-radius: 15px;
+}
+
+
+
+#overlay{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    /* opacity: 0.9; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#winner-message{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#overlay button{
+    background: lime;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    opacity: 1;
+    margin: 10px;
+    outline: none;
+    border: 0px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px lightgrey;
+    cursor: pointer;
+}
+
+@media (max-width: 600px){
+
+    #grid{
+        width: 95%;
+        height: 300px;
+    }
+
+    .cell{
+        height: 100px;
+        font-size: 60px;
+    }
+
+    #winner-message{
+        font-size: 20px;
+    }
+
+    #overlay button{
+        padding: 5px;
+        font-size: 17px;
+    }
+    
+}
